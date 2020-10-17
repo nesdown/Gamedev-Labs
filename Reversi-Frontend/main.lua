@@ -11,8 +11,10 @@ function love.load()
     exit.load(20, 680)
     restart.load(360, 680)
 
+    red_pin = love.graphics.newImage("red_pin.png")
 
     require "deck"
+    deck.load()
     -- Debug elements
     debug_x = 0
     debug_y = 0
@@ -46,11 +48,18 @@ function love.draw()
         end
     end
 
+    -- love.graphics.draw(red_pin, 180, 241, 0, 1, 1, -20, -21)
+
+    -- Draw deck elements
+    deck.draw()
+
     -- Draw other elements
     exit.draw()
     restart.draw()
 
     -- Debugging Log
     love.graphics.print("X: " .. debug_x .. " Y: " .. debug_y .. " Horizontal Block Number: " .. count_x .. " Vertical Block Number: " .. count_y, 10, 10)
+    
+    -- For various tests
     love.graphics.print(math.floor(3/2), 10, 50)
 end
