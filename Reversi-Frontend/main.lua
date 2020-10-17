@@ -32,16 +32,21 @@ end
 -- Any event of object clicking
 function love.mousereleased(mx, my)
     exit.mouseaction(mx, my)
-    restart.mouseaction(mx, my)
+    if (restart.mouseaction(mx, my)) then
+        deck.reset()
+        player_num = 1
+        players_score = {2, 2}
+    else
+        -- Here we are getting the debug data
+        deck, player_num = controler.click(deck, mx, my, player_num)
+        players_score = {controler.score(deck, 1), controler.score(deck, 2)}
+    end
     
     -- Debugging part
     debug_x = mx
     debug_y = my
 
-    -- Here we are getting the debug data
     count_x, count_y = deck.mousereleased(mx, my)
-    deck, player_num = controler.click(deck, mx, my, player_num)
-    players_score = {controler.score(deck, 1), controler.score(deck, 2)}
 end
 
 function love.draw()
@@ -65,17 +70,14 @@ function love.draw()
     -- For various tests
 
     -- Player number
-    love.graphics.print("Player: " .. player_num, 10, 50)
+    if (player_num == 1) then
+        love.graphics.print("Player: red", 10, 50)
+    else
+        love.graphics.print("Player: green", 10, 50)
+    end
 
     -- Scores
     love.graphics.print("Score", 200, 40)
     love.graphics.print("P1: " .. players_score[1], 150, 60)
     love.graphics.print("P2: " .. players_score[2], 250, 60)
-
-    b = controler.depth(deck, 6, 5, -1, 0, 1, false)
-    if (b) then
-        love.graphics.print("true", 50, 50) 
-    else
-        love.graphics.print("false", 50, 50)
-    end
 end

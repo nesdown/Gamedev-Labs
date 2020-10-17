@@ -4,16 +4,19 @@ function controler.click(deck, mx, my, player_num)
     count_x, count_y = deck.mousereleased(mx, my)
     if (count_x > 0 and count_x < 9 and count_y > 0 and count_y < 9) then
         if (deck[count_x][count_y][1] == 0) then
-            deck = controler.drawdimension(deck, count_x, count_y, 1, 0, player_num)
-            deck = controler.drawdimension(deck, count_x, count_y, 1, 1, player_num)
-            deck = controler.drawdimension(deck, count_x, count_y, 0, 1, player_num)
-            deck = controler.drawdimension(deck, count_x, count_y, -1, 1, player_num)
-            deck = controler.drawdimension(deck, count_x, count_y, -1, 0, player_num)
-            deck = controler.drawdimension(deck, count_x, count_y, -1, -1, player_num)
-            deck = controler.drawdimension(deck, count_x, count_y, 0, -1, player_num)
-            deck = controler.drawdimension(deck, count_x, count_y, 1, -1, player_num)
-            deck[count_x][count_y] = {1, player_num}
-            player_num = 3 - player_num
+            stepdone = false
+            deck, stepdone = controler.drawdimension(deck, count_x, count_y, 1, 0, player_num, stepdone)
+            deck, stepdone = controler.drawdimension(deck, count_x, count_y, 1, 1, player_num, stepdone)
+            deck, stepdone = controler.drawdimension(deck, count_x, count_y, 0, 1, player_num, stepdone)
+            deck, stepdone = controler.drawdimension(deck, count_x, count_y, -1, 1, player_num, stepdone)
+            deck, stepdone = controler.drawdimension(deck, count_x, count_y, -1, 0, player_num, stepdone)
+            deck, stepdone = controler.drawdimension(deck, count_x, count_y, -1, -1, player_num, stepdone)
+            deck, stepdone = controler.drawdimension(deck, count_x, count_y, 0, -1, player_num, stepdone)
+            deck, stepdone = controler.drawdimension(deck, count_x, count_y, 1, -1, player_num, stepdone)
+            if (stepdone) then
+                deck[count_x][count_y] = {1, player_num}
+                player_num = 3 - player_num
+            end
         end
     end
     return deck, player_num
@@ -55,10 +58,10 @@ function controler.depth(deck, count_x, count_y, dx, dy, player_num, draw)
     return false
 end
 
-function controler.drawdimension(deck, count_x, count_y, dx, dy, player_num)
+function controler.drawdimension(deck, count_x, count_y, dx, dy, player_num, stepdone)
     if (controler.depth(deck, count_x, count_y, dx, dy, player_num, false)) then
-        return controler.depth(deck, count_x, count_y, dx, dy, player_num, true), 1
+        return controler.depth(deck, count_x, count_y, dx, dy, player_num, true), true
     else
-        return deck, 0
+        return deck, false or stepdone
     end
 end

@@ -17,6 +17,18 @@ function deck.load()
     green_pin_image = love.graphics.newImage("green_pin.png")
 end 
 
+function deck.reset()
+    for i = 1, 8 do
+        for j = 1, 8 do
+            deck[i][j] = {0, 0}
+        end
+    end
+    deck[4][4] = {1, 2}
+    deck[4][5] = {1, 1}
+    deck[5][4] = {1, 1}
+    deck[5][5] = {1, 2}
+end
+
 -- This function determines which is a number of a pressed block on 8x8
 function deck.mousereleased(mx, my)
     count_x, count_y = math.floor((mx - 75) / 42) + 1, math.floor((my - 220) / 42) + 1

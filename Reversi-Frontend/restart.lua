@@ -12,11 +12,8 @@ function restart.load(draw_x, draw_y)
 end
 
 function restart.mouseaction(mx, my)
-    if mx >= restart.x and mx < restart.x + restart_image:getWidth()
-    and my >= restart.y and my < restart.y + restart_image:getHeight() then
-        -- Then it will be changed to reset functionality
-        love.event.quit(0)
-    end
+    return mx >= restart.x and mx < restart.x + restart_image:getWidth()
+    and my >= restart.y and my < restart.y + restart_image:getHeight()
 end
 
 function restart.draw() 
