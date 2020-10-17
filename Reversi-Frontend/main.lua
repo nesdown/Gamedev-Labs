@@ -4,6 +4,8 @@ function love.load()
     
     -- Initialize a background variable
     background = love.graphics.newImage("back-deck.png")
+    win_image = love.graphics.newImage("youwin.png")
+    loose_image = love.graphics.newImage("youloose.png")
 
     -- Set up functional elements (buttons)
     require "exit"
@@ -63,6 +65,13 @@ function love.draw()
     -- Draw other elements
     exit.draw()
     restart.draw()
+    if players_score[1] + players_score[2] == 64 then
+        if players_score[1] > players_score[2] then
+            love.graphics.print("Player 1 win", 240, 400)
+        else
+            love.graphics.print("Player 2 win", 240, 400)
+        end
+    end
 
     -- Debugging Log
     love.graphics.print("X: " .. debug_x .. " Y: " .. debug_y .. " Horizontal Block Number: " .. count_x .. " Vertical Block Number: " .. count_y, 10, 10)
