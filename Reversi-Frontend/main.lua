@@ -67,9 +67,9 @@ function love.draw()
     restart.draw()
     if players_score[1] + players_score[2] == 64 then
         if players_score[1] > players_score[2] then
-            love.graphics.print("Player 1 win", 240, 400)
+            love.graphics.print("Player 1 win", 240, 200)
         else
-            love.graphics.print("Player 2 win", 240, 400)
+            love.graphics.print("Player 2 win", 240, 200)
         end
     end
 
