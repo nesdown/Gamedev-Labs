@@ -65,3 +65,29 @@ function controler.drawdimension(deck, count_x, count_y, dx, dy, player_num, ste
         return deck, false or stepdone
     end
 end
+
+function controler.depth8(deck, count_x, count_y, player_num)
+    for i = -1, 1 do
+        for j = -1, 1 do
+            -- if (i != 0 and j != 0) then
+                if controler.depth(deck, count_x, count_y, i, j, player_num, false) then
+                    return true
+                end
+            -- end
+        end
+    end
+    return false
+end
+
+function controler.canMove(deck, player_num)
+    for i = 1, 8 do
+        for j = 1, 8 do
+            if deck[i][j][1] == 0 then
+                if controler.depth8(deck, i, j, player_num) then
+                    return true
+                end
+            end
+        end
+    end
+    return false
+end
