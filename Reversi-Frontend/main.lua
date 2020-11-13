@@ -28,6 +28,8 @@ function love.load()
     require "controler"
     players_score = {2, 2}
     player_num = 1
+
+    require "ai"
 end
 
 function love.update(dt)
@@ -52,6 +54,16 @@ function love.mousereleased(mx, my)
     debug_y = my
 
     count_x, count_y = deck.mousereleased(mx, my)
+
+    if player_num == 2
+    then
+        local movex = -1
+        local movey = -1
+        movex, movey = ai.minimaxDecision(deck, player_num)
+        deck = ai.makeMove(deck, movex, movey, player_num)
+        player_num = 3 - player_num
+        players_score = {controler.score(deck, 1), controler.score(deck, 2)}
+    end
 end
 
 function love.draw()
