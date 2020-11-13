@@ -1,14 +1,58 @@
 ai = {}
 require "controler"
 
-function ai.heuristic(deck, player_num)
-    local opponent = 1
-    if player_num == 1 then
-        opponent = 2
+function ai.score(deck)
+    local score1 = 0
+    local score2 = 0
+    for i = 1, 8
+    do
+        for j = 1, 8
+        do
+            if deck[i][j][2] == 1
+            then
+                if i > 2 and i < 7 and j > 2 and j < 7
+                then
+                    score1 = score1 + 7
+                elseif i % 7 == 1 and j % 7 ~= 1 or i % 7 ~= 1 and j % 7 == 1
+                then
+                    score1 = score1 + 30
+                elseif i % 7 == 1 and j % 7 == 1
+                then
+                    score1 = score1 + 200
+                else
+                    score1 = score1 + 1
+                end
+            end
+            if deck[i][j][2] == 2
+            then
+                if i > 2 and i < 7 and j > 2 and j < 7
+                then
+                    score2 = score2 + 7
+                elseif i % 7 == 1 and j % 7 ~= 1 or i % 7 ~= 1 and j % 7 == 1
+                then
+                    score2 = score2 + 30
+                elseif i % 7 == 1 and j % 7 == 1
+                then
+                    score2 = score2 + 200
+                else
+                    score2 = score2 + 1
+                end
+            end
+        end
     end
-    local ourScore = controler.score(deck, player_num)
-    local opponentScore = controler.score(deck, opponent)
-    return ourScore - opponentScore
+    return score1, score2
+end
+
+function ai.heuristic(deck, player_num)
+    local score1 = -1
+    local score2 = -1
+    score1, score2 = ai.score(deck)
+    if player_num == 1
+    then
+        return score1 - score2
+    else
+        return score2 - score1
+    end
 end
 
 function ai.getMoveList(deck, player_num)
@@ -40,22 +84,22 @@ function ai.copyDeck(deck)
 end
 
 function ai.makeMove(deck, x, y, player)
+    local s = false
     for i = -1, 1
     do
-        local s = false
         for j = -1, 1 
         do
             deck, s = controler.drawdimension(deck, x, y, i, j, player, s)
         end
-        if s 
-        then
-            deck[x][y] = {1, player}
-        end
+    end
+    if s 
+    then
+        deck[x][y] = {1, player}
     end
     return deck
 end
 
-function ai.minimaxValue(deck, player, currentPlayer, depth)
+function ai.minimaxValue(deck, player, currentPlayer, depth, alpha, beta)
     if (depth == 0 or controler.canMove(deck, currentPlayer) == false) then
         return ai.heuristic(deck, player)
     end
@@ -67,27 +111,55 @@ function ai.minimaxValue(deck, player, currentPlayer, depth)
     local moveList = ai.getMoveList(deck, currentPlayer)
 
     if #moveList == 0 then
-        return ai.minimaxValue(deck, player, opponent, depth - 1)
+        return ai.minimaxValue(deck, player, opponent, depth - 1, alpha, beta)
     else
-        local bestMoveValue = -100
+        local bestMoveValue = -9999
         if player ~= currentPlayer 
         then
-            bestMoveValue = 100
+            bestMoveValue = 9999
         end
 
         for i = 1, #moveList
         do
             local tempdeck = ai.copyDeck(deck)
             tempdeck = ai.makeMove(tempdeck, moveList[i][1], moveList[i][2], currentPlayer)
-            local value = ai.minimaxValue(tempdeck, player, opponent, depth - 1)
+            local value = ai.minimaxValue(tempdeck, player, opponent, depth - 1, alpha, beta)
 
             if player == currentPlayer 
             then
+                local bestMaxValue = -9999
+                if value > bestMaxValue
+                then
+                    bestMaxValue = value
+                end
+                if alpha < bestMaxValue
+                then
+                    alpha = bestMaxValue
+                end
+                if alpha >= beta
+                then
+                    return alpha
+                end
+
                 if value > bestMoveValue
                 then
                     bestMoveValue = value
                 end
             else
+                local bestMinValue = 9999
+                if value < bestMinValue
+                then
+                    bestMinValue = value
+                end
+                if beta > bestMinValue
+                then
+                    beta = bestMinValue
+                end
+                if alpha >= beta
+                then
+                    return beta
+                end
+
                 if value < bestMoveValue
                 then
                     bestMoveValue = value
@@ -100,33 +172,45 @@ function ai.minimaxValue(deck, player, currentPlayer, depth)
 end
 
 function ai.minimaxDecision(deck, player)
-    local x = -1
-    local y = -1
     local opponent = 1
     if player == 1 then 
         opponent = 2
     end
     local moveList = ai.getMoveList(deck, player)
+    local bestValuesNum = 0
+    local bestValuesArr = {}
 
     if #moveList == 0
     then
-        return x, y
+        return -1, -1
     else
-        local bestMoveValue = -100
-        x = moveList[1][1]
-        y = moveList[1][2]
+        local bestMoveValue = -9999
         for i = 1, #moveList
         do
             local tempdeck = ai.copyDeck(deck)
             tempdeck = ai.makeMove(tempdeck, moveList[i][1], moveList[i][2], player)
-            local value = ai.minimaxValue(tempdeck, player, opponent, 3)
+            local value = ai.minimaxValue(tempdeck, player, opponent, 4, -9999, 9999)
+            bestValuesArr[#bestValuesArr + 1] = value
             if value > bestMoveValue
             then
                 bestMoveValue = value
-                x = moveList[i][1]
-                y = moveList[i][2]
+                bestValuesNum = 1
+            elseif value == bestMoveValue
+            then
+                bestValuesNum = bestValuesNum + 1
             end
         end
-        return x, y
+        local randBestMove = math.random(1, bestValuesNum)
+        for i = 1, #bestValuesArr
+        do
+            if bestValuesArr[i] == bestMoveValue
+            then
+                randBestMove = randBestMove - 1
+            end
+            if randBestMove == 0
+            then
+                return moveList[i][1], moveList[i][2]
+            end
+        end
     end
 end

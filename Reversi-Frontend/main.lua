@@ -84,8 +84,10 @@ function love.draw()
         love.graphics.print("GAME OVER", 200, 110)
         if players_score[1] > players_score[2] then
             love.graphics.print("Player 1 win", 200, 150)
-        else
+        elseif players_score[1] < players_score[2] then
             love.graphics.print("Player 2 win", 200, 150)
+        else
+            love.graphics.print("Draw", 200, 150)
         end
     end
 
