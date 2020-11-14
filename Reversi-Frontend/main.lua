@@ -13,8 +13,10 @@ function love.load()
     -- Set up functional elements (buttons)
     require "exit"
     require "restart"
+    require "change_start"
     exit.load(20, 680)
     restart.load(360, 680)
+    change_start.load(300, 720)
 
     require "deck"
     deck.load()
@@ -30,6 +32,8 @@ function love.load()
     player_num = 1
 
     require "ai"
+    ai_player = 2
+    next_game_ai = 2
 end
 
 function love.update(dt)
@@ -42,11 +46,25 @@ function love.mousereleased(mx, my)
     if (restart.mouseaction(mx, my)) then
         deck.reset()
         player_num = 1
+        ai_player = next_game_ai
         players_score = {2, 2}
+    elseif change_start.mouseaction(mx, my)
+    then
+        next_game_ai = 3 - next_game_ai
     else
         -- Here we are getting the debug data
-        deck, player_num = controler.click(deck, mx, my, player_num)
-        players_score = {controler.score(deck, 1), controler.score(deck, 2)}
+        if player_num == ai_player
+        then
+            local movex = -1
+            local movey = -1
+            movex, movey = ai.minimaxDecision(deck, player_num)
+            deck = ai.makeMove(deck, movex, movey, player_num)
+            player_num = 3 - player_num
+            players_score = {controler.score(deck, 1), controler.score(deck, 2)}
+        else
+            deck, player_num = controler.click(deck, mx, my, player_num)
+            players_score = {controler.score(deck, 1), controler.score(deck, 2)}
+        end
     end
     
     -- Debugging part
@@ -54,16 +72,6 @@ function love.mousereleased(mx, my)
     debug_y = my
 
     count_x, count_y = deck.mousereleased(mx, my)
-
-    if player_num == 2
-    then
-        local movex = -1
-        local movey = -1
-        movex, movey = ai.minimaxDecision(deck, player_num)
-        deck = ai.makeMove(deck, movex, movey, player_num)
-        player_num = 3 - player_num
-        players_score = {controler.score(deck, 1), controler.score(deck, 2)}
-    end
 end
 
 function love.draw()
@@ -80,6 +88,7 @@ function love.draw()
     -- Draw other elements
     exit.draw()
     restart.draw()
+    change_start.draw(next_game_ai)
     if controler.canMove(deck, player_num) == false then
         love.graphics.print("GAME OVER", 200, 110)
         if players_score[1] > players_score[2] then
