@@ -1,0 +1,17 @@
+.hamburger
+	display: none
+	padding: 0
+	@media screen and (max-width: $lg)
+		display: inline-block
+	&-inner, &-inner:after, &-inner:before
+		background-color: #fff
+		@media screen and (max-width: $sm)
+			width: 30px
+	@media screen and (max-width: $sm)
+		.hamburger-box
+			width: 30px
+
+	&.is-active
+		.hamburger
+			&-inner,&-inner:after,&-inner:before
+				background-color: #fff

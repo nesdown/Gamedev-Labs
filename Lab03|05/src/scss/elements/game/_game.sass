@@ -1,0 +1,984 @@
+*
+  box-sizing: border-box
+
+body
+  font-family: "Century Gothic", sans-serif
+  //overflow : hidden
+section
+  width: 100vw
+
+/*overflow: hidden;
+
+h1, h2, h3, h4, h5, h6
+  margin: 0 0 .5em
+
+img
+  width: 100%
+  height: auto
+
+input[type=number]
+  &::-webkit-inner-spin-button, &::-webkit-outer-spin-button
+    -webkit-appearance: none
+    margin: 0
+
+button
+  background-color: transparent
+  border: none
+  padding: 0
+  outline: none
+  cursor: pointer
+  transition: .3s ease-in-out all
+  border-radius: 60px
+
+
+.menu
+   display: flex
+   flex-direction: column
+   align-items: center
+   padding-bottom: 95%
+
+.menu .btn
+    font-size: get-vw(80px)
+    padding: get-vw(60px) get-vw(40px)
+    margin: 0 0 15px 0
+    width: 300px
+
+
+
+.btn
+  cursor: pointer
+  transition: .3s ease-in-out all
+  border-radius: 60px
+  border: 14px solid #f6efd7
+  letter-spacing: 1px
+  font-family: "Century Gothic", sans-serif
+  color: #fff
+  background-color: #529520
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.19)
+  transition: .3s ease-in-out all
+  padding: 20px 40px
+  /*min-width: 75px;
+  font-size: 55px
+  font-weight: bold
+  @media screen and (max-width: 1919px)
+    font-size: get-vw(55px)
+    padding: get-vw(20px) get-vw(40px)
+    border: get-vw(14px) solid #fff
+  &:hover
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7)
+    transition: .3s ease-in-out all
+  @media screen and (max-width: 780px)
+    font-size: get-vw(55px)
+    padding: get-vw(45px) get-vw(65px)
+    border: get-vw(14px) solid #fff
+
+button:active, .btn:active, button:active img, .btn:active img
+  transform: scale(0.99)
+
+button:hover
+  transform: scale(1.01)
+  transition: .3s ease-in-out all
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5)
+
+/* common-styles
+
+.d-flex
+  display: flex
+
+.flex-row
+  flex-direction: row
+
+.flex-column
+  flex-direction: column
+
+.flex-wrap
+  flex-wrap: wrap
+
+.flex-nowrap
+  flex-wrap: nowrap
+
+.align-items-center
+  align-items: center
+
+.justify-content-between
+  justify-content: space-between
+
+.justify-content-center
+  justify-content: center
+
+.text-center
+  text-align: center
+
+.text-left
+  text-align: left
+
+.h-100
+  height: 100%
+
+/* /common-styles
+
+.container
+  max-width: 1700px
+  margin: 0 auto
+  padding: 0 15px
+
+  /*padding: 130px 15px 90px;
+  margin: 0 auto
+  position: relative
+
+
+.btn-cancel
+  background-image: url(./../media/img/btn-cancel.png)
+  width: 151px
+  height: 151px
+  border-radius: 50%
+  background-repeat: no-repeat
+  background-position: center center
+  -webkit-background-size: contain
+  background-size: contain
+  @media screen and (max-width: 1919px)
+    width: get-vw(151px)
+    height: get-vw(151px)
+  &_v2
+    border-radius: 0
+    z-index: 2
+    //box-shadow: -11px 11px 7px 1px rgba(0, 0, 0, 0.35)
+    background-image: url(./../media/img/btn-cancel_v2.png)
+    &:hover
+      box-shadow: unset
+
+
+/* nav-bar
+
+.nav-bar
+  /*position: fixed;
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+
+  /*padding: 65px calc((100vw - 1700px) / 2) 90px;
+  padding: 65px 75px 90px
+  z-index: 2
+  @media screen and (max-width: 1919px)
+    padding: get-vw(65px) get-vw(75px) get-vw(90px)
+/* top-bar
+
+.top-bar
+  position: relative
+  button
+    width: 175px
+    height: 185px
+    max-width: 175px
+    max-height: 185px
+    @media screen and (max-width: 1919px)
+      width: get-vw(175px)
+      height: get-vw(185px)
+    @media screen and (max-width: 720px)
+      width: get-vw(375px)
+      height: get-vw(385px)
+
+  .btn
+    font-size: 100px
+    @media screen and (max-width: 1919px)
+      font-size: get-vw(100px)
+
+/* /top-bar
+
+/* bottom-bar
+
+.bottom-bar .btn
+  width: 451px
+  height: 141px
+  @media screen and (max-width: 1919px)
+    width: get-vw(451px)
+    height: get-vw(141px)
+/* /bottom-bar
+
+/* /nav-bar
+
+/* Section Start
+
+.temp-wrap
+  padding: 100px
+
+#start, .temp-wrap
+  background-image: url(../media/img/main-bg.png)
+  background-position: center center
+  -webkit-background-size: cover
+  background-size: cover
+  //min-height: 100vh
+
+#start
+  position: relative
+  height: 100vh
+  overflow: hidden
+
+#start .container
+  height: 100%
+
+.start-inner-images
+  flex: 1 1 100%
+  padding-top: 60px
+
+/* /Section Start
+
+/* button-arrows
+
+.btn-arr
+  width: 89px
+  height: 88px
+  border-radius: 50%
+  background-repeat: no-repeat
+  -webkit-background-size: contain
+  background-size: contain
+  background-position: center center
+  @media screen and (max-width: 1919px)
+    width: get-vw(89px)
+    height: get-vw(88px)
+  @media screen and (max-width: 819px)
+    width: 10vw
+    height: 10vw
+    margin-right: -32px
+    margin-left: -32px
+
+.btn-prev
+  background-image: url(./../media/img/btn-prev.png)
+
+.btn-next
+  background-image: url(./../media/img/btn-next.png)
+
+/* /button-arrows
+
+#mainText
+  text-align: center
+  width: 719px
+  height: 354px
+  @media screen and (max-width: 1919px)
+    width: get-vw(719px)
+    height: get-vw(354px)
+.snake-img
+  text-align: center
+  width: 785px
+  //min-height: 422px
+  background-image: url(../media/img/money-img.png)
+  background-position: center calc( 100% + 70px )
+  background-repeat: no-repeat
+  -webkit-background-size: contain
+  background-size: contain
+  @media screen and (max-width: 768px)
+    width: 100%
+  img
+    width: 332px
+    height: auto
+    max-width: calc( 100vw - 30px )
+    @media screen and (max-width: 1919px)
+      width: get-vw(332px)
+    @media screen and (max-width: 1024px)
+      width: 300px
+    @media screen and (max-width: 768px)
+      width: 40%
+/* scoreboard
+
+#scoreboard
+  position: absolute
+  top: 0
+  right: 15px
+  padding-top: 80px
+  padding-right: 80px
+  font-family: 'Luckiest Guy'
+  color: #fff
+  letter-spacing: 2px
+  text-shadow: -7px 6px 8px rgba(0,0,0,.6)
+  @media screen and (max-width: 1919px)
+    padding-top: get-vw(80px)
+    padding-right: get-vw(80px)
+
+  .balance
+    font-size: 32px
+.players-list
+  padding-left: 0
+  //text-align: right
+  counter-reset: list
+  font-size: 24px
+  li
+    list-style: none
+    &:before
+      content: counter(list)'. '
+      counter-increment: list
+    &:nth-of-type(4)
+      opacity: .8
+    &:nth-of-type(5)
+      opacity: .6
+    &:nth-of-type(6)
+      opacity: .4
+
+/* /scoreboard
+
+/* Game
+
+#game
+  position: relative
+  .btn-cancel
+    position: absolute
+    top: 47px
+    left: 47px
+    @media screen and (max-width: 1919px)
+      top: get-vw(47px)
+      left: get-vw(47px)
+
+#playButton
+  &:disabled
+    opacity: .8
+    background-color: #ccc
+    &:hover
+      box-shadow: unset
+      transform: unset
+
+  svg
+    width: auto
+    height: 100%
+/* /Game
+
+/* info-table
+
+.info-table, info-table_sm, info-table_md
+  position: relative
+  max-width: 90vw
+  background-repeat: no-repeat
+  background-position: center center
+  -webkit-background-size: 100%
+  background-size: 100%
+  padding: 160px 200px
+  font-family: 'Luckiest Guy', sans-serif
+  @media screen and (max-width: 1919px)
+    padding: get-vw(160px) get-vw(200px)
+
+.info-table
+  background-image: url(./../media/img/info-table.png)
+  width: 1293px
+  height: 952px
+  padding: 160px 200px
+  top : 5%
+  @media screen and (max-width: 1919px)
+    width: get-vw(1293px)
+    height: get-vw(952px)
+    padding: get-vw(160px) get-vw(200px)
+  @media screen and (max-width: 819px)
+    top : 3%
+    width: 60vw
+    height: 46.4vw
+    padding: 7vw
+  @media screen and (max-width: 650px)
+    width: 74vw
+    height: calc( 76vw / 1.35 )
+    padding: get-vw-x(70px, 720) get-vw-x(70px, 720)  get-vw-x(70px, 720) get-vw-x(70px, 720)
+
+  h3
+    font-size: 75px
+    color: #3f3f3f
+    letter-spacing: 4.13px
+    @media screen and (max-width: 1919px)
+      font-size: get-vw(75px)
+      letter-spacing: get-vw(4.13px)
+    @media screen and (max-width: 767px)
+      font-size: get-vw-x(40px, 767)
+
+  p
+    color: #808080
+    font-size: 58px
+    font-weight: bold
+    letter-spacing: 4.13px
+    @media screen and (max-width: 1919px)
+      font-size: get-vw(58px)
+      letter-spacing: get-vw(4.13px)
+
+  .btn-cancel
+    position: absolute
+    top: 30px
+    right: 70px
+    z-index: 2
+    @media screen and (max-width: 1919px)
+      top: get-vw(30px)
+      right: get-vw(70px)
+
+  .btn
+    //width: 451px
+    //height: 141px
+    outline: none
+    @media screen and (max-width: 1919px)
+      //width: get-vw(451px)
+      //height: get-vw(141px)
+
+.info-table__inner
+  max-height: 100%
+  overflow-y: auto
+
+.d-flex .info-table
+  &.info-table_sm, &.info-table_md
+    flex: 0 0 auto
+
+.info-table
+  &.info-table_sm h3, &.info-table_md h3
+    font-size: 46px
+    @media screen and (max-width: 1919px)
+      font-size: get-vw(46px)
+    @media screen and (max-width: 767px)
+      font-size: get-vw-x(30px, 767)
+
+  &.info-table_sm input, &.info-table_md input
+    font-size: 46px
+    height: 60px
+    @media screen and (max-width: 1919px)
+      font-size: get-vw(46px)
+      height: get-vw(60px)
+    @media screen and (max-width: 767px)
+      font-size: get-vw-x(30px, 767)
+      height: auto
+
+  &.info-table_sm
+    background-image: url(./../media/img/info-table_sm.png)
+    width: 627px
+    height: 832px
+    padding: 140px 115px 120px 75px
+    @media screen and (max-width: 1919px)
+      width: get-vw(627px)
+      height: get-vw(832px)
+      padding: get-vw(140px) get-vw(115px) get-vw(120px) get-vw(75px)
+    @media screen and (max-width: 767px)
+      width: 70%
+      height: get-vw-x(660px, 767)
+      padding: get-vw-x(140px, 767) get-vw-x(115px, 767) get-vw-x(120px, 767) get-vw-x(75px, 767)
+      input, h3
+        height: auto
+        font-size: toRem(30px)
+      button.btn
+        width: auto
+        height: auto
+        border-width: .41667vw
+        font-size: get-vw-x(20px, 767)
+        padding: 9px 20px 0
+        margin-bottom: 15px
+
+    @media screen and (max-width: 580px)
+      width: 100%
+      height: calc( (100vw - 40px ) * 1.32 )
+      padding: get-vw-x(140px, 580) get-vw-x(115px, 580) get-vw-x(120px, 580) get-vw-x(75px, 580)
+      //input, h3
+      //  height: auto
+      //  font-size: toRem(20px)
+
+    @media screen and (max-width: 480px)
+      input, h3
+        height: auto
+        font-size: toRem(18px)
+
+    h3
+      margin: 0 10px
+
+    .btn
+      width: 324px
+      height: 77px
+      border-width: 8px
+      font-size: 38px
+      padding: 6px  20px
+      @media screen and (max-width: 1919px)
+        width: get-vw(324px)
+        height: get-vw(77px)
+        border-width: get-vw(8px)
+        font-size: get-vw(38px)
+        padding: get-vw(6px) get-vw(20px)
+
+  &.info-table_md
+    background-image: url(./../media/img/info-table_md.png)
+    width: 1140px
+    height: 832px
+    padding: 160px 150px 160px 170px
+    @media screen and (max-width: 1919px)
+      width: get-vw(1140px)
+      height: get-vw(832px)
+      padding: get-vw(160px) get-vw(150px) get-vw(160px) get-vw(170px)
+    @media screen and (max-width: 767px)
+      width: 100%
+      margin-left: 0
+      margin-right: 0
+      height: calc( (100vw - 59px) / 1.37)
+      padding: get-vw-x(110px, 767) get-vw-x(120px, 767)
+    @media screen and (max-width: 580px)
+      width: 100%
+      height: calc( (100vw - 59px) / 1.32 )
+      padding: 12.65vw
+    @media screen and (max-width: 480px)
+      padding: get-vw-x(45px, 480)  get-vw-x(70px, 480)
+      h3
+        font-size: get-vw-x(18px, 480)
+      input
+        font-size: get-vw-x(20px, 480)
+        height: auto
+
+/* /info-table
+
+/* input-item
+
+.input-item
+  background-color: rgba(97, 96, 95, 0.66)
+  border-radius: 40px
+  position: relative
+  margin-bottom: 50px
+  @media screen and (max-width: 1919px)
+    margin-bottom: get-vw(50px)
+
+  &:after
+    content: ''
+    position: absolute
+    top: 10px
+    left: 0
+    width: 100%
+    height: 100%
+    border-radius: 40px
+    background-image: linear-gradient(to top, #fff, rgba(255, 255, 255, 0.2))
+    @media screen and (max-width: 1919px)
+      top: get-vw(10px)
+
+  input
+    border-radius: 40px
+    text-align: center
+    height: 100px
+    width: 100%
+    padding: 25px 50px 0
+    background-color: transparent
+    outline: none
+    border: none
+    font-size: 75px
+    font-weight: bold
+    letter-spacing: 4.13px
+    position: relative
+    z-index: 2
+    @media screen and (max-width: 1919px)
+      border-radius: get-vw(40px)
+      height: get-vw(100px)
+      padding: get-vw(25px) get-vw(50px) 0
+      font-size: get-vw(75px)
+      letter-spacing: get-vw(4.13px)
+
+    &::placeholder
+      text-align: center
+
+    &:focus
+      box-shadow: 2px 12px 4px rgba(42, 189, 32, 0.3)
+
+.info-table .btn:focus
+  box-shadow: 2px 12px 4px rgba(42, 189, 32, 0.3)
+
+/* /input-item
+
+
+#withdraw input
+  height: 80px
+  @media screen and (max-width: 1919px)
+    height: get-vw(80px)
+  @media screen and (max-width: 767px)
+    height: auto
+    font-size: 26px
+    &::placeholder
+      font-size: 16px
+
+.info-table_v2
+  padding: 160px 180px 160px 150px
+  @media screen and (max-width: 1919px)
+    padding: get-vw(160px) get-vw(180px) get-vw(160px) get-vw(150px)
+  @media screen and (max-width: 767px)
+    padding: get-vw-x(100px, 767) get-vw-x(130px, 767) get-vw-x(130px, 767) get-vw-x(120px, 767)
+  @media screen and (max-width: 580px)
+    padding: get-vw-x(50px, 580) get-vw-x(80px, 580) get-vw-x(70px, 580) get-vw-x(60px, 580)
+
+  input
+    font-size: 50px
+    @media screen and (max-width: 1919px)
+      font-size: get-vw(50px)
+
+  .btns-wrap
+    margin-left: -8px
+    margin-right: -8px
+    @media screen and (max-width: 1919px)
+      margin-left: get-vw(-8px)
+      margin-right: get-vw(-8px)
+
+  .btn
+    font-family: "Luckiest Guy"
+    min-width: 308px
+    width: auto
+    height: 140px
+    font-size: 52px
+    font-weight: bold
+    letter-spacing: 3.21px
+    padding: 20px
+    line-height: 1.8em
+    margin: 8px
+    @media screen and (max-width: 1919px)
+      min-width: get-vw(308px)
+      height: get-vw(140px)
+      font-size: get-vw(52px)
+      letter-spacing: get-vw(3.21px)
+      padding: get-vw(20px)
+      margin: get-vw(8px)
+    @media screen and (max-width: 780px)
+      min-width: get-vw(350px)
+      height: get-vw(180px)
+      padding: get-vw(40px)
+/* personal user data
+
+.personal
+  //height: 100%
+  display: flex
+  align-items: center
+  justify-content: center
+
+  .container
+    max-width: 1900px
+    height: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+    align-content: center
+    @media screen and (max-width: 767px)
+      height: auto
+
+  .personal-inner
+    display: flex
+    justify-content: center
+    align-content: center
+    padding: 25px 0
+    position: relative
+
+    @media screen and (max-width: 767px)
+      display: block
+      height: 100vh
+      overflow-y: scroll
+
+    .btn-cancel
+      position: absolute
+      top: 30px
+      right: 70px
+      z-index: 2
+      @media screen and (max-width: 1919px)
+        top: get-vw(30px)
+        right: get-vw(70px)
+      @media screen and (max-width: 780px)
+        top: get-vw(370px)
+        right: get-vw(210px)
+        width: 13vw
+        height: 11vw
+        //@media screen and (max-width: 780px)
+        //top: get-vw(370px)
+        //right: get-vw(210px)
+        //width: 13vw
+        //height: 11vw
+
+  .info-table
+    margin-left: 11px
+    margin-right: 11px
+    @media screen and (max-width: 767px)
+      margin: 0 auto 25px
+    &__inner
+      justify-content: space-between
+    &_sm
+      @media screen and (max-width: 580px)
+        .input-item
+          margin-bottom: 25px
+
+
+  &__user-data
+    h3
+      margin-right: 28px
+    @media screen and (max-width: 767px)
+      display: block
+      text-align: left
+
+  .slider
+    margin: 0 auto 34px
+
+    @media screen and (max-width: 1919px)
+      margin-bottom: get-vw(34px)
+    @media screen and (max-width: 819px)
+      max-width: 65%
+    @media screen and (max-width: 650px)
+      max-width: 60%
+
+/* /personal user data
+
+/* slider
+
+.slider
+  position: relative
+  padding: 0 90px
+  @media screen and (max-width: 1919px)
+    padding: 0 get-vw(90px)
+  //@media screen and (max-width: 819px)
+
+  .btn-arr
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+
+  .btn-prev
+    left: 0
+
+  .btn-next
+    right: 0
+
+  &-inner
+    margin-left: auto
+    margin-right: auto
+
+
+    img
+      display: none
+
+    .active
+      display: block
+
+  &-item
+    display: none
+
+    &.active
+      display: block
+
+
+
+/* /slider
+
+@keyframes mmfadeIn
+  from
+    opacity: 0
+  to
+    opacity: 1
+
+@keyframes mmfadeOut
+  from
+    opacity: 1
+  to
+    opacity: 0
+
+@keyframes mmslideIn
+  from
+    transform: translateY(15%)
+  to
+    transform: translateY(0)
+
+@keyframes mmslideOut
+  from
+    transform: translateY(0)
+  to
+    transform: translateY(15%)
+
+.micromodal-slide[aria-hidden="false"] .modal__overlay
+  animation: mmfadeIn .3s cubic-bezier(0.0, 0.0, 0.2, 1)
+
+.micromodal-slide[aria-hidden="false"] > div:not(.modal__overlay)
+  animation: mmslideIn .3s cubic-bezier(0, 0, .2, 1)
+
+.micromodal-slide > div
+  will-change: transform
+
+.modal
+  //display: flex
+  display: none
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  justify-content: center
+  align-items: center
+  z-index: 99
+  &.is-open
+    display: flex
+  //transform: scale(0)
+  //&.five
+  //  transform: scale(1)
+  //  .modal__overlay
+  //    background: rgba(0,0,0,.0)
+  //    animation: fadeIn .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards
+  //  &>div:not(.modal__overlay)
+  //    transform: translateX(-1500px)
+  //    animation: roadRunnerIn .3s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards
+  //  &.out
+  //    animation: quickScaleDown 0s .5s linear forwards
+  //    .modal__overlay
+  //      animation: fadeOut .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards
+  //    &>div:not(.modal__overlay)
+  //      animation: roadRunnerOut .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards
+
+.modal > div
+  z-index: 100
+
+// preloader
+
+#preloader
+  position: fixed
+  z-index: 100000
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  background-color: #000
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  img
+    animation: bounce 2s infinite
+    max-width: 250px
+  svg
+    width: 150px
+    height: 150px
+    circle
+      stroke: #529520
+
+@keyframes bounce
+  0%
+    transform: scale(.98)
+  50%
+    transform: scale(1.02)
+  100%
+    transform: scale(.98)
+
+
+#replenish
+  .info-table
+    &__inner
+      overflow: hidden
+    &_v2
+      input
+        @media screen and (max-width: 767px)
+          height: auto
+          font-size: 30px
+          &::placeholder
+            font-size: 24px
+        @media screen and (max-width: 580px)
+          height: auto
+          font-size: 24px
+          &::placeholder
+            font-size: 18px
+        @media screen and (max-width: 480px)
+          height: auto
+          font-size: 24px
+          &::placeholder
+            font-size: 14px
+      h3
+        @media screen and (max-width: 580px)
+          font-size: 24px
+
+        @media screen and (max-width: 480px)
+          font-size: 20px
+
+  .btns-wrap
+    @media screen and (max-width: 767px)
+      justify-content: center
+
+.earned
+  color: #814a21
+  font-size: 75px
+  letter-spacing: 4.13px
+  @media screen and (max-width: 1919px)
+    font-size: get-vw(75px)
+    letter-spacing: get-vw(4.13px)
+  @media screen and (max-width: 767px)
+    font-size: get-vw-x(40px, 767)
+
+#loose, #leave
+  .info-table
+    padding: get-vw(200px) get-vw(100px)  get-vw(190px) get-vw(90px)
+    @media screen and (max-width: 767px)
+      padding: get-vw-x(90px, 767) get-vw-x(100px, 767)  get-vw-x(100px, 767) get-vw-x(90px, 767)
+    &__inner
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+      align-items: center
+      height: 100%
+  .btns-wrap
+    padding: 15px
+    .btn
+      border-radius: 55px
+      margin: 0 15px
+      height: auto
+      text-shadow: 1px 1px 6px rgba(0,0,0,1)
+      font-family: 'Luckiest Guy', sans-serif
+      font-size: 50px
+      line-height: .9
+      padding: 21px 97px 5px
+      @media screen and (max-width: 1919px)
+        border-radius: get-vw(55px)
+        margin: 0 get-vw(15px)
+        font-size: get-vw(50px)
+        padding: get-vw(21px) get-vw(60px) get-vw(5px)
+
+      @media screen and (max-width: 767px)
+        font-size: get-vw-x(24px, 767)
+
+#loose
+  .info-table
+    @media screen and (max-width: 1919px)
+      padding: get-vw(200px) get-vw(100px)  get-vw(190px) get-vw(90px)
+    @media screen and (max-width: 767px)
+      padding: get-vw-x(120px, 767) get-vw-x(100px, 767)  get-vw-x(110px, 767) get-vw-x(90px, 767)
+
+@keyframes fadeIn
+  0%
+    background: rgba(0,0,0,.0)
+  100%
+    background: rgba(0,0,0,.7)
+
+@keyframes fadeOut
+  0%
+    background: rgba(0,0,0,.7)
+  100%
+    background: rgba(0,0,0,.0)
+
+
+@keyframes quickScaleDown
+  0%
+    transform: scale(1)
+  99.9%
+    transform: scale(1)
+  100%
+    transform: scale(0)
+
+@keyframes roadRunnerIn
+  0%
+    transform: translateX(-1500px) skewX(30deg) scaleX(1.3)
+  70%
+    transform: translateX(30px) skewX(0deg) scaleX(.9)
+  100%
+    transform: translateX(0px) skewX(0deg) scaleX(1)
+
+@keyframes roadRunnerOut
+  0%
+    transform: translateX(0px) skewX(0deg) scaleX(1)
+  30%
+    transform: translateX(-30px) skewX(-5deg) scaleX(.9)
+  100%
+    transform: translateX(1500px) skewX(30deg) scaleX(1.3)
+
+
+
+.social-networks
+  display: flex
+  flex-direction: column
+  position: absolute
+  left: 0
+  bottom: 17%
+  @media screen and (max-width: 780px)
+    bottom: 8%
+
+
+.social-networks a
+  margin: 3px 0
+
+.social-networks img
+  width: 50px
+
+

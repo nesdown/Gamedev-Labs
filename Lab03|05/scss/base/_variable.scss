@@ -1,0 +1,107 @@
+
+// ************************************ 
+//          Responsive
+// *************************************
+
+$xl: 1200px;
+$lg: 991px;
+$md: 768px;
+$sm: 576px;
+
+
+// ************************************
+//          Colors
+// ************************************
+
+$color-base: #f83b6a;
+$color-txt: #33273d;
+
+// ************************************ 
+//          Font-family
+// ************************************
+
+$font-stack: -apple-system, BlinkMacSystemFont,Roboto,'Open Sans','Helvetica Neue',sans-serif;
+
+
+// ************************************ 
+//          Animation
+// ************************************
+
+$transition: 0.3s all ease-in-out;
+$transition-svg: 0.5s all ease-in-out;
+
+
+// ************************************ 
+//          Functions (D)
+// ************************************
+
+
+
+@function get-vw($target){
+	$vw-context: (1920 * 0.01) * 1px;
+	@return ($target / $vw-context) * 1vw;
+}
+
+@function get-vw-1170($target){
+	$vw-context: (1170 * 0.01) * 1px;
+	@return ($target / $vw-context) * 1vw;
+}
+@function get-vw-x($target, $mediaQuery){
+	$vw-context: ($mediaQuery * 0.01) * 1px;
+	@return ($target / $vw-context) * 1vw;
+}
+
+@function txt-vw($target){
+	$vw-context: (1366 * 0.007) * 1px;
+	// @return ($target / $vw-context) * 1vw;
+}
+
+@function font-min($target){
+	@return ($target * 0.8 );
+}
+
+@function toRem($font-size){
+	@return ($font-size / 16px) * 1rem;
+}
+
+@function toEm($font-size1, $font-size2){
+	@return ($font-size2 / $font-size1) * 1em;
+}
+
+// ************************************ 
+//          Vars (D)
+// ************************************
+
+%bg-cover {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+
+}
+
+%bg-auto {
+	background-repeat: no-repeat;
+	background-size: auto;
+	background-position: center center;
+}
+
+
+%bg-contain {
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center center;
+}
+
+
+// ************************************
+//          FONTS
+// ************************************
+$font-base: 'Raleway';
+
+
+
+
+
+
+
+

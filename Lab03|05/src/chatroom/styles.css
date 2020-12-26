@@ -1,0 +1,7 @@
+body {
+  background-image: url("textback3.png");
+}
+
+.aside > .info {
+  display: none;
+}

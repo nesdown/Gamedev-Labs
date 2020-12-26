@@ -1,0 +1,47 @@
+/* MODULES */
+@import "modules/mircomodal";
+//@import "~@fancyapps/fancybox/dist/jquery.fancybox.min.css";
+//@import "~slick-carousel/slick/slick.css";
+//@import "~slick-carousel/slick/slick-theme.css";
+//@import "~bootstrap/dist/css/bootstrap-grid.min.css";
+//
+//// hamburger
+//@import "~hamburgers/_sass/hamburgers/hamburgers";
+//@import "~hamburgers/_sass/hamburgers/base";
+//@import "~hamburgers/_sass/hamburgers/types/spin";
+//
+////animate.css
+//@import "~animate.css/animate.min.css";
+
+
+
+
+/* BASE */
+@import "base/normalize";
+@import "base/fonts";
+@import "base/variable";
+@import "base/mixin";
+@import "base/typography";
+@import "base/basic-styles.sass";
+@import "base/animate-css-helper";
+
+/* ELEMENTS */
+@import "elements/header/header.sass";
+@import "elements/footer/footer.sass";
+@import "elements/game/game";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

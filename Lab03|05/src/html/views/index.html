@@ -1,0 +1,21 @@
+<% var data = {
+title: "Home",
+metaDescription: "<meta name='description' content=''>",
+}; %>
+
+<%= _.template(require('./../includes/header/header.html'))(data) %>
+
+<!--************************************
+        Main  start
+*************************************-->
+<main>
+
+	<%= _.template(require('./../includes/index/game.html'))(data) %>
+
+</main>
+
+<!--************************************
+        Main end
+*************************************-->
+
+<%= _.template(require('./../includes/footer/footer.html'))(data) %>

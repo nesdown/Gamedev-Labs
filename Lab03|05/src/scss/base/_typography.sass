@@ -1,0 +1,85 @@
+body
+	font-family: $font-base, sans-serif
+	font-size: 1rem
+	font-weight: 400
+	font-style: normal
+	color: $color-txt
+
+
+
+h1
+	color: inherit
+	font-weight: 500
+	//font-size: toRem(60px)
+	font-size: 60px
+	line-height: 1.1em
+	margin: 0
+	margin-bottom: .3em
+	@media screen and (max-width: $sm)
+		font-size: toRem(28px)
+
+h2
+	color: inherit
+	font-size: 42px
+	font-weight: 700
+	line-height: 1.3em
+	position: relative
+	margin-bottom: 30px
+	margin-top: 0
+	@media screen and (max-width: 767px)
+		font-size: 28px
+		line-height: 1.2em
+
+
+
+h3
+	font-size: toRem(24px)
+	font-weight: 500
+	color: inherit
+	margin-top: 0
+	margin-bottom: .7rem
+	@media screen and (max-width: 480px)
+		font-size: 16px
+		margin-bottom: 5px
+
+h4
+	color: inherit
+	font-size: toRem(18px)
+	font-weight: 800
+	margin: 0
+	margin-bottom: 1em
+
+h5
+	color: inherit
+	font-size: 1rem
+	margin-top: 0
+	margin-bottom: 1rem
+
+p
+	color: inherit
+	font-weight: 400
+	font-style: normal
+	font-size: 1rem
+	line-height: 1.5em
+	margin-bottom: 15px
+	margin-top: 0
+	@media screen and (max-width: 480px)
+		font-size: 12px
+		line-height: 1.4em
+
+a
+	font-weight: 400
+	color: inherit
+	font-style: normal
+	text-decoration: none
+	&[href^="mailto"], &[href^="tel"]
+		white-space: nowrap
+		display: inline-block
+
+ul
+	padding-left: 18px
+	li
+		font-size: 1rem
+		line-height: 1.5em
+		font-weight: 400
+		font-style: normal

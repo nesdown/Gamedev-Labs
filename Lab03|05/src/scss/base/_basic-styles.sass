@@ -1,0 +1,103 @@
+html
+	font-size: 16px
+
+body
+	overflow-x: hidden
+
+*:focus
+	outline: unset
+
+
+a
+	&[href^="mailto"], &[href^="tel"]
+		transition: $transition
+		&:hover
+			transition: $transition
+
+img
+	max-width: 100%
+	height: auto
+
+button
+	cursor: pointer
+	border: none
+	outline: none
+	&:focus
+		box-shadow: unset
+
+input
+	outline: none
+	border: none
+	&:not([type=checkbox])
+		width: 100%
+
+ul
+	padding: 0
+	margin: 0
+
+// *** LOGO ***
+.logo
+	a
+		display: inline-block
+
+// *** TABS ***
+.tabs
+	&__caption
+		list-style: none
+		display: flex
+		flex-wrap: wrap
+		cursor: pointer
+	&__content
+		display: none
+		&.active
+			display: block
+
+
+// *** Button to up ***
+.btn-to-up
+	position: fixed
+	display: inline-block
+	width: 40px
+	height: 40px
+	right: 25px
+	bottom: 25px
+	border-radius: 50%
+	border: none
+	outline: none
+	box-shadow: 2px 2px 10px rgba(0,0,0,0.3)
+	cursor: pointer
+	transition: $transition
+	z-index: 20
+	background-color: #fff
+	svg
+		width: 1rem
+	&:hover
+		opacity: .85
+		transition: $transition
+		box-shadow: 2px 2px 10px rgba(0,0,0,0.5)
+	&:active
+		box-shadow: inset 2px 2px 2px rgba(0,0,0,0.5)
+		transition: 0.1s ease-in-out all
+
+
+// *** Common section ***
+.common-section
+	padding: 80px 0
+	position: relative
+	z-index: 1
+	overflow: hidden
+
+
+// *** Section title ***
+.section-title
+	position: relative
+	text-align: center
+	strong
+		font-weight: inherit
+		color: $color-base
+
+
+
+// ************************************
+// 						CUSTOM STYLES
+// ************************************
